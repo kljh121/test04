@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow: hidden;
+}
+
+/*天空样式*/
+.sky {
+	width: 100%;
+	height: 60vh;
+	background: linear-gradient(rgb(196,228,253) 0%,#fff 100%);
+	position: relative;
+}
+
+/*设置云朵基本样式*/
+
+.sky > div {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: -100%;
+}
+.sky > div:before {
+	content: '';
+	width: 160px;
+	height: 50px;
+	background: #fff;
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	top: 40px;
+	transform: translate(-94px,0);
+}
+.sky > div:after {
+	content: '';
+	width: 80px;
+	height: 50px;
+	background: #fff;
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	top: 38px;
+	transform: translate(-88px,0) rotate(66deg);
+}
+.cloud-one {
+	top: 50px;
+	transform: translate(-66px,18px);
+	animation: cloud 9s linear infinite;
+	z-index: 5;
+}
+.cloud-two {
+	top: 150px;
+	transform: scale(.9,.9) translate(-116px,0);
+	animation: cloud 11s linear infinite;
+	opacity: .75;
+	z-index: 4;
+}
+.cloud-three {
+	top: -15px;
+	transform: scale(.85,.85) translate(-200px,10px);
+	animation: cloud 11s linear infinite;
+	opacity: .7;
+	z-index: 3;
+}
+.cloud-four {
+	top: 30px;
+	transform: scale(.7,.7) translate(600px,0);
+	animation: cloud 12s linear infinite;
+	opacity: .65;
+	z-index: 2;
+}
+.cloud-five {
+	top: 180px;
+	transform: scale(.6,.6) translate(525px,
+		-70px);
+	animation: cloud 14s linear infinite;
+	opacity: .55;
+	z-index: 1;
+}
+
+/*草地样式*/
+.lawn {
+	width: 100%;
+	height: 40vh;
+	background: linear-gradient(#fff 0%,rgb(148,190,89) 100%);
+	z-index: 1;
+	position: relative;
+}
+.lawn > img {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	bottom: 50px;
+	right: 200px;
+}
+/*云朵动画*/
+@keyframes cloud {
+	from {
+		right: -20%;
+	}
+	to {
+		right: 130%;
+	}
+}
